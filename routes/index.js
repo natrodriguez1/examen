@@ -52,9 +52,7 @@ router.get('/findByPrice/view', function(req, res, next) {
 });
 
 router.get('/findById/view', function(req, res, next) {
-  let id = parseFloat(req.query.id);
-  
-  console.log(req.query.id)
+  let id = parseFloat(req.query.id) | 1;
 
   Ropa.findAll({
       attributes: { exclude: ["updatedAt"] },
